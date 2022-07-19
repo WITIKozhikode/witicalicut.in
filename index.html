@@ -17,21 +17,7 @@
 <script type="text/javascript" src="js/jquery.quicksand.js"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
-<script>
-    
-    var index=2;
-    function changeImage()
-    {
-        document.getElementById("myImg").src="./images/banner"+index+".png";
-        index++
-        if(index>6)
-        {
-            index=1;
-        }
-        setTimeout(changeImage, 5000);
-        //alert('hey..')
-    }
-</script>
+
 
 <script>
     
@@ -39,7 +25,7 @@
 </head>
 
 
-<body>
+<body onload="changeImage()">
 
 <!--Wrapper Start-->
 <div id="wrapper">
@@ -171,7 +157,9 @@
                             <p class="slidetext ls-s4" id="slide3p1" >Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
                         </div> -->
-                        <img id="myImg" alt="layer" src="./images/banner1.png" onmouseover="changeImage()"/>
+
+                        
+                        <img id="myImg" alt="layer" src="./images/banner1.png" />
                         
                         
                     </div>
@@ -453,5 +441,22 @@ main_menu.init("main_menu","menuhover");
 </script>
 </body>
 
+
+<script>
+    
+    var index=1;
+    function changeImage()
+    {
+        //alert('hey...')
+        document.getElementById("myImg").src="./images/banner"+index+".png";
+        index++
+        if(index>4)
+        {
+            index=1;
+        }
+        setTimeout(changeImage, 5000);
+        //alert('hey..')
+    }
+</script>
 
 </html>
