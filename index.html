@@ -176,11 +176,24 @@
 </div>
 <!--Header End-->
 
+          
+
 
 
 <!--Content Start-->
 <div id="content">
 
+    <div id="news">
+        <div class="scrolling">
+            <div class="ticker">
+                <div class="title"><h5>Latest News</h5></div>
+                <div class="msg">
+                    <marquee><a href=""><h3>Happy Independence Day
+                         </h3></a></marquee>
+                </div>
+            </div>
+        </div>
+    </div>  
 <!--Welcome Part Start-->
 <div class="welcome-part">
 
@@ -318,11 +331,11 @@
 <ul>
 
 
-<li><div class="gallery_item"><a href="./images/campus1.png" rel="prettyPhoto[gallery1]" ><img src="images/campus1.png" width="284" height="127" alt="" /></a><span><a href="images/mo-image-big-2.jpg" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
+<li><div class="gallery_item"><a href="images/campus1.png" rel="prettyPhoto[gallery1]" ><img src="images/campus1.png" width="284" height="127" alt="" /></a><span><a href="images/mo-image-big-2.jpg" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
 
-<li><div class="gallery_item"><a href="./images/kalari.jpg" rel="prettyPhoto[gallery1]" ><img src="images/campus3.png" width="284" height="127" alt="" /></a><span><a href="images/mo-image-big-3.jpg" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
+<li><div class="gallery_item"><a href="images/campus3.png" rel="prettyPhoto[gallery1]" ><img src="images/campus3.png" width="284" height="127" alt="" /></a><span><a href="images/mo-image-big-3.jpg" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
 
-<li><div class="gallery_item"><a href="./images/nss.jpg" rel="prettyPhoto[gallery1]" ><img src="images/campus4.png" width="284" height="127" alt="" /></a><span><a href="http://vimeo.com/173714" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
+<li><div class="gallery_item"><a href="images/campus4.png" rel="prettyPhoto[gallery1]" ><img src="images/campus4.png" width="284" height="127" alt="" /></a><span><a href="http://vimeo.com/173714" rel="prettyPhoto[gallery]" ><img src="images/photo.png" alt="" title="" /></a></span></div></li>
 
 </ul>
 
@@ -364,7 +377,7 @@
 <div class="university">
 <h1>Govt. ITI (W) Kozhikode</h1>
 <ul>
-<li><a href="./images/admission-1.jpg">Trades</a></li>
+<li><a href="#">Trades</a></li>
 <li><a href="#">Orders</a></li>
 <li><a href="#">Technical Staff </a></li>
 <li><a href="#">Administrative Staff</a></li>
@@ -378,10 +391,10 @@
 <div class="quick">
 <h1>Quick Link</h1>
 <ul>
-<li><a href="https://https://itiadmissions.kerala.gov.in/" target="_blank">ITI Admission 2022</a></li>
+<li><a href="https://det.kerala.gov.in/" target="_blank">Industrial Training Dept</a></li>
 <li><a href="https://dgt.gov.in/" target="_blank">DGT</a></li>
 <li><a href="http://www.spectrumjobs.org/" target="_blank" >Spectrum Jobs </a></li>
-<li><a href="https://det.kerala.gov.in//" target="_blank" >ITD Kerala</a></li>
+<li><a href="https://bharatskills.gov.in/" target="_blank" >Bharath Skills</a></li>
 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfBQVSCOa1YOTFacun71qZTu_Mg0EoI7dYUadhxV-zBH2ueJw/viewform" target="_blank" >Grievance Redressal </a></li>
 <li><a href="https://www.smile.kerala.gov.in/" target="_blank">SMILE - E Learning Platform</a></li>
 </ul>
@@ -444,15 +457,15 @@ main_menu.init("main_menu","menuhover");
 
 <script>
     
-    var index=1;
+    var index=12;
     function changeImage()
     {
         //alert('hey...')
         document.getElementById("myImg").src="./images/banner"+index+".png";
         index++
-        if(index>6)
+        if(index>13)
         {
-            index=1;
+            index=12;
         }
         setTimeout(changeImage, 5000);
         //alert('hey..')
