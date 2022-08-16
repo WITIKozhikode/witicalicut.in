@@ -52,6 +52,7 @@ a,a:hover
 
 #wrapper{width:100%;height:auto;float:left;background:url(../images/Headr-border.png) top repeat-x;padding-top:24px;}
 #page{width:1024px;height:auto;margin:0px auto;}
+#news{width:1011px;height:60px; margin-bottom: 5px;}
 #header{width:1011px;height:auto;float:left;background:url(../images/header-shadow.png) center top no-repeat;}
 #content{width:1011px;height:auto;float:left;}
 #footer{width:100%;height:319px;float:left;background:url(../images/footer-bg.png) bottom center no-repeat}
@@ -96,6 +97,8 @@ ul#main_menu ul li a:hover {background-color:#7c0024; color:#FFF; display:block;
 .apply{width:280px;height:auto;float:left;}
 .banner-part{width:1011px;height:auto;float:left; background:url(../images/banner-bg.png) bottom repeat-x; padding-bottom:13px;}
 
+
+/* scrolling text part */
 
 /*Content Start*/
 .welcome-part{width:1011px;height:auto;float:left;background: url(../images/welcome-bg.png) #FFF bottom repeat-x;padding-bottom:60px;padding-top:34px;}
@@ -342,4 +345,62 @@ padding-top:10px;padding-bottom:10px;}
 .course-list-inner-instructor{width:114px;}
 .course-list-inner-time{width:112px;}
 .course-list-inner-location{width:141px;}
+
+
+/*scrolling css starts here */
+
+.scroling{
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+ .ticker{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+ } 
+
+ .msg{
+	width: 76%;
+	border-top: 13px solid transparent;
+	background: #4461cc;
+	padding: 0 2%;
+	color: white;
+	text-align: center;
+}
+
+ .title{
+	width:20%;
+	text-align: center;
+	background: #c81c1c;
+	position: relative;
+	color: white;
+ }
+
+ .title:after{
+	position: absolute;
+	content: "";
+	right:-16%;
+	border-left: 20px solid #c81c1c;
+	border-top: 33px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 33px solid transparent;
+	top:0;
+ }
+ .title h5{
+	font-size: 18px;
+	margin: 8% 0;
+ }
+
+ .msg a{
+	color:white;
+ }
+
+/* scroling text ends here */
 
