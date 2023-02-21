@@ -94,7 +94,7 @@ ul#main_menu li.selected ul li a{ color:#FFFFFF;}
 ul#main_menu li.selected ul li a:hover{ color:#f8a94d;}
 ul#main_menu ul li a:hover {background-color:#7c0024; color:#FFF; display:block; padding-bottom:8px; }
 
-.apply{width:280px;height:auto;float:left;}
+.apply{width:200px;height:auto;float:left;}
 .banner-part{width:1011px;height:auto;float:left; background:url(../images/banner-bg.png) bottom repeat-x; padding-bottom:13px;}
 
 
