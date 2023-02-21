@@ -81,7 +81,7 @@ a,a:hover
 
 ul#main_menu {list-style:none; margin-top:17px;}
 ul#main_menu * {margin:0; padding:0;}
-ul#main_menu li {position:relative; background:url(../images/divater.png) right no-repeat; float:left; padding-left:24px; padding-right:24px;height:30px; padding-top:13px;}
+ul#main_menu li {position:relative; background:url(../images/divater.png) right no-repeat; float:left; padding-left:10px; padding-right:24px;height:30px; padding-top:13px;}
 ul#main_menu li a{font:Bold 14px  Arial, Helvetica, sans-serif;color:#FFF; text-transform:uppercase;}
 ul#main_menu li a:hover{color:#f8a94d;}
 ul#main_menu li.selected a{color:#f8a94d;}
