@@ -25,8 +25,8 @@
 </head>
 
 
-<!--<body onload="changeImage()"> -->
-	<body>
+<body onload="changeImage()">
+<!--	<body> -->
 
 <!--Wrapper Start-->
 <div id="wrapper">
@@ -461,17 +461,17 @@ main_menu.init("main_menu","menuhover");
 
 <script>
     
-    var index=7;
+    var index=1;
     function changeImage()
     {
         //alert('hey...')
-        //document.getElementById("myImg").src="./images/banner"+index+".png";
-        //index++
-        //if(index>11)
-       // {
-        //    index=7;
-       // }
-        //setTimeout(changeImage, 5000);
+        document.getElementById("myImg").src="./images/bannernew"+index+".png";
+        index++
+        if(index>2)
+       {
+            index=1;
+        }
+        setTimeout(changeImage, 5000);
         //alert('hey..')
     }
 </script>
