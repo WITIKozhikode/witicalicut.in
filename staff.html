@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -498,5 +498,949 @@ html {
    
   </div>
 </div><!--page ends here-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Directory</title>
+    <style>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Modern, clear font */
+    }
+    
+    body {
+        /* Lighter, more professional background gradient */
+        background: linear-gradient(135deg, #eef2f7 0%, #c3cfe2 100%); 
+        padding: 20px;
+        min-height: 100vh;
+    }
+    
+    /* === HEADER === */
+    .header {
+        text-align: center;
+        margin-bottom: 30px; /* Reduced margin */
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header h1 {
+        color: #2c3e50;
+        margin-bottom: 5px; /* Reduced margin */
+        font-size: 2.5rem;
+    }
+
+    .header h2 { /* Targeting the subtitle */
+        color: #3498db; 
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+    
+    .header p {
+        color: #7f8c8d;
+        font-size: 1.1rem;
+    }
+
+    .home-btn {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 8px 15px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+    }
+
+    .home-btn:hover {
+        background-color: #2980b9;
+    }
+    
+    /* === CONTAINER & GRID === */
+    .container {
+        max-width: 1300px; /* Slightly wider container */
+        margin: 0 auto;
+        padding: 10px;
+    }
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Slightly smaller gap for compactness */
+    }
+    
+    .column {
+        /* Four columns on large screens for compactness */
+        flex: 0 0 calc(25% - 20px); 
+        margin-bottom: 20px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+        .column {
+            flex: 0 0 calc(33.33% - 20px); /* Three columns */
+        }
+    }
+
+    @media (max-width: 850px) {
+        .column {
+            flex: 0 0 calc(50% - 20px); /* Two columns */
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .column {
+            flex: 0 0 100%; /* Single column on small devices */
+        }
+    }
+    
+    /* === CARD STYLING === */
+    .card {
+        background-color: white;
+        border-radius: 10px; /* Slightly smaller border-radius */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px); /* Less dramatic lift */
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px; /* Thinner accent bar */
+        background-color: #3498db; /* Unified accent color */
+        z-index: 1;
+    }
+    
+    .card-img-container {
+        width: 100%;
+        padding: 15px 15px 10px; /* Reduced padding for compactness */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .card-img {
+        width: 110px; /* Smaller image size */
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid #ecf0f1; /* Lighter border */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .card-content {
+        padding: 0 15px 15px; /* Reduced padding */
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card h2 {
+        font-size: 1.1rem; /* Smaller name font */
+        margin-bottom: 5px;
+        color: #2c3e50;
+        line-height: 1.2;
+    }
+    
+    .card .title {
+        color: #2980b9; /* Slightly darker blue for readability */
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 0.85rem; /* Smaller title font */
+        padding: 3px 8px; /* Compact title pill */
+        background: #eef7ff;
+        border-radius: 15px;
+        display: inline-block;
+        align-self: center; /* Center the title pill */
+    }
+    
+    .card .email a {
+        color: #7f8c8d;
+        font-size: 0.85rem;
+        word-break: break-word;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+
+    .card .email a:hover {
+        color: #3498db;
+    }
+    
+    .card .email {
+        color: #7f8c8d; /* Fallback for non-link email text */
+        margin-bottom: 15px;
+        font-size: 0.85rem; 
+        line-height: 1.4;
+        flex-grow: 1; /* Pushes the phone to the bottom */
+    }
+    
+    /* === PHONE BUTTON === */
+    .phone {
+        margin-top: auto;
+        padding: 10px 15px; /* Added horizontal padding */
+        color: white;
+        background-color: #1a1746; /* Green accent for call-to-action */
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 -15px -15px -15px; /* Extends to card edges */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: background-color 0.2s;
+    }
+
+    .card:hover .phone {
+        background-color: #2788ae;
+    }
+    
+    .phone::before {
+        content: '📞';
+        font-size: 1rem;
+    }
+    
+    /* === FOOTER === */
+    .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+</style>    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Meet The Team</h1>
+            <h2>Technical & Non-Technical Staff Directory</h2>
+        </div>
+        
+        <p><a class="home-btn" href="index.html">Home</a></p>
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/abhilash p.jpg" alt="ABHILASH P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>ABHILASH P</h2>
+                            <p class="title">Office Attendant HG</p>
+                            <p class="email">lashpclt@gmail.com</p>
+                            <div class="phone">9656739748</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/ajay.jpg" alt="AJAYAKUMAR M J"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>AJAYAKUMAR M J</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">ajaymjwayanad@gmail.com</p>
+                            <div class="phone">7907545689</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/akshay p.v.jpg" alt="AKSHAY P V"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>AKSHAY P V</h2>
+                            <p class="title">Clerk</p>
+                            <p class="email">apvamrutham@gmail.com</p>
+                            <div class="phone">8129456035</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/ansha sreedharan.jpg" alt="ANSHA SREEDHARAN P M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>ANSHA SREEDHARAN P M</h2>
+                            <p class="title">Clerk</p>
+                            <p class="email">anshasreedharan125@gmail.com</p>
+                            <div class="phone">9778479842</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="anupama.png" alt="ANUPAMA P M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>ANUPAMA P M</h2>
+                            <p class="title">GROUP INSTRUCTOR</p>
+                            <p class="email">anupamaperoolimedayil@gmail.com</p>
+                            <div class="phone">9946356612</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Anusree.jpg" alt="Anusree V P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Anusree V P</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">anusreevp1994@gmail.com</p>
+                            <div class="phone">8848346918</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Arun Manohar.jpg" alt="ARUN MANOHAR M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>ARUN MANOHAR M</h2>
+                            <p class="title">Clerk</p>
+                            <p class="email">arunm288@gmail.com</p>
+                            <div class="phone">7559858493</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Aswathi_Vijayan.jpg" alt="ASWATHI VIJAYAN"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>ASWATHI VIJAYAN</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">aswathivijayanmvr@gmail.com</p>
+                            <div class="phone">9539873969</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="aysha.png" alt="AYSHA K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>AYSHA K</h2>
+                            <p class="title">DRESSER</p>
+                            <p class="email">nezeenak@gmail.com</p>
+                            <div class="phone">8289800328</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="biju.png" alt="BIJU T B"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>BIJU T B</h2>
+                            <p class="title">Junior Superintendent</p>
+                            <p class="email">bijubalanpm@gmail.com</p>
+                            <div class="phone">8848126841</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="chandrika.png" alt="CHANDRIKA C M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>CHANDRIKA C M</h2>
+                            <p class="title">Full Time Sweeper</p>
+                            <p class="email">Chandrikacm3@gmail.com</p>
+                            <div class="phone">8086694477</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/jasheeda n.JPG" alt="JASHEEDA N"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>JASHEEDA N</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">funjash@gmail.com</p>
+                            <div class="phone">9747611066</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/JITEESH T.jpeg" alt="JIJEESH T"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>JIJEESH T</h2>
+                            <p class="title">WATCHMAN</p>
+                            <p class="email">jjeeshthayyil@gmail.com</p>
+                            <div class="phone">9747610477</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/JINCY AUGUSTINE.jpeg" alt="JINCY AUGUSTINE"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>JINCY AUGUSTINE</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">jincyaugustine007@gmail.com</p>
+                            <div class="phone">9447637765</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="jithil.png" alt="JITHIL"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>JITHIL</h2>
+                            <p class="title">WORKSHOP ATTENDER</p>
+                            <p class="email">jithinar99@gmail.com</p>
+                            <div class="phone">9747222037</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Jogitha K.JPG" alt="JOGITHA K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>JOGITHA K</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">jogitharajan@gmail.com</p>
+                            <div class="phone">9567024401</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/KRISHNANKUTTI.jpeg" alt="Krishnan Kutty M R"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Krishnan Kutty M R</h2>
+                            <p class="title">STORE ATTENDER</p>
+                            <p class="email">krishnankuttymrkoodaranhi@gmail.com</p>
+                            <div class="phone">9846285773</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/LINIMOL K K.jpeg" alt="LINIMOL K K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>LINIMOL K K</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">liniskeloth@gmail.com</p>
+                            <div class="phone">9497649438</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Manjusree N.jpg" alt="MANJUSREE N"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>MANJUSREE N</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">nmanjusree@yahoo.co.in</p>
+                            <div class="phone">9048156840</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/neethu.jpg" alt="NEETHU G"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>NEETHU G</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">neethunandhu03@gmail.com</p>
+                            <div class="phone">8590696129</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="nithun.png" alt="NITHUN P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>NITHUN P</h2>
+                            <p class="title">WORKSHOP ATTENDER</p>
+                            <p class="email">nithunppattathil@gmail.com</p>
+                            <div class="phone">9072408820</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/PRABIJA M.jpeg" alt="PRABIJA M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>PRABIJA M</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">harisreebaa@gmail.com</p>
+                            <div class="phone">9048934414</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/PRAJITHA V P.jpg" alt="PRAJITHA V P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>PRAJITHA V P</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">prajitha.cse@gmail.com</p>
+                            <div class="phone">9645323626</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Pramod.jpg" alt="PRAMOD KUMAR P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>PRAMOD KUMAR P</h2>
+                            <p class="title">VICE PRINCIPAL</p>
+                            <p class="email">pramodparambath.pk@gmail.com</p>
+                            <div class="phone">9387048709</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="pramod.png" alt="PRAMOD P G"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>PRAMOD P G</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">pramod3pg@gmail.com</p>
+                            <div class="phone">9895574285</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/pramodan.jpg" alt="PRAMODAN M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>PRAMODAN M</h2>
+                            <p class="title">STORE KEEPER (UD)</p>
+                            <p class="email">lanipramodmadathil@gmail.com</p>
+                            <div class="phone">9745522812</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="rajesh.png" alt="Rajesh M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Rajesh M</h2>
+                            <p class="title">Head Clerk</p>
+                            <p class="email">rajesh9447283166@gmail.com</p>
+                            <div class="phone">9447283166</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/RATHEESH K T.jpeg" alt="RATHEESH K T"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>RATHEESH K T</h2>
+                            <p class="title">WATCHMAN</p>
+                            <p class="email">ktratheesh80@gmail.com</p>
+                            <div class="phone">9946774853</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/REENA M K.jpg" alt="REENA M K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>REENA M K</h2>
+                            <p class="title">Typist Selection Gr</p>
+                            <p class="email">reenavinodkumarmk@gmail.com</p>
+                            <div class="phone">9947066145</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="remabhai.png" alt="REMABHAI C R"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>REMABHAI C R</h2>
+                            <p class="title">Senior Clerk</p>
+                            <p class="email">remalalu@gmail.com</p>
+                            <div class="phone">9809453271</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Resmi.jpg" alt="RESMI P M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>RESMI P M</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">pmresmi@gmail.com</p>
+                            <div class="phone">9947416323</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/ResnaC.jpg" alt="Resna C"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Resna C</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">resnac38@gmail.com</p>
+                            <div class="phone">9744307533</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Risna.JPG" alt="RISNA P V"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>RISNA P V</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">pvrisna@gmail.com</p>
+                            <div class="phone">9847649266</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Sajitha K.jpg" alt="SAJITHA K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SAJITHA K</h2>
+                            <p class="title">Senior Clerk</p>
+                            <p class="email">sajithaanooj@gmail.com</p>
+                            <div class="phone">9497066114</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Sangeeth1.jpg" alt="SANGEETH KUMAR B"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SANGEETH KUMAR B</h2>
+                            <p class="title">Group Instructor</p>
+                            <p class="email">sangicalicut@gmail.com</p>
+                            <div class="phone">9895058051</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Sanjana.jpg" alt="Sanjana N C"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Sanjana N C</h2>
+                            <p class="title">JUNIOR INSTRUCTOR</p>
+                            <p class="email">sanjanasanc123@gmail.com</p>
+                            <div class="phone">8848738596</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Santhosh K.jpg" alt="Santhosh K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Santhosh K</h2>
+                            <p class="title">STORE KEEPER (LD)</p>
+                            <p class="email">santhoshkmpm@gmail.com</p>
+                            <div class="phone">8848214114</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="sareena.png" alt="Sareena M M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Sareena M M</h2>
+                            <p class="title">Office Attendant</p>
+                            <p class="email">sareenamm6@gmail.com</p>
+                            <div class="phone">9645717385</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="seema.png" alt="SEEMA KUMARI A"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SEEMA KUMARI A</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">seemakumari.a@gmail.com</p>
+                            <div class="phone">9744318122</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Shaju K P.jpg" alt="SHAJU K P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SHAJU K P</h2>
+                            <p class="title">PRINCIPAL</p>
+                            <p class="email">shajukp2208@gmail.com</p>
+                            <div class="phone">9447583537</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/SHEEJA T M.jpg" alt="SHEEJA T M"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SHEEJA T M</h2>
+                            <p class="title">Senior Superintendent</p>
+                            <p class="email">pushparajsheeja@gmail.com</p>
+                            <div class="phone">9495721530</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Shinodh.jpg" alt="SHINOD KUMAR M K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SHINOD KUMAR M K</h2>
+                            <p class="title">Senior Instructor (ACD)</p>
+                            <p class="email">shinunair2255@gmail.com</p>
+                            <div class="phone">7907384060</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Siraj K K.jpg" alt="SIRAJ K K"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SIRAJ K K</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">sirajkk4u@gmail.com</p>
+                            <div class="phone">9645059087</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="sreejith.png" alt="SREEJITH S"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SREEJITH S</h2>
+                            <p class="title">WATCHMAN</p>
+                            <p class="email">sreejithspk123@gmail.com</p>
+                            <div class="phone">9846983854</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/Sumesh.jpg" alt="SUMESH T"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SUMESH T</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">sumeshitikkd@gmail.com</p>
+                            <div class="phone">9747366077</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/SYAMKUMAR B.jpeg" alt="SYAM KUMAR B"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SYAM KUMAR B</h2>
+                            <p class="title">WATCHMAN</p>
+                            <p class="email">syammanavari007@gmail.com</p>
+                            <div class="phone">9048837172</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/SYAMA K S.jpg" alt="SYAMA K S"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>SYAMA K S</h2>
+                            <p class="title">SENIOR INSTRUCTOR</p>
+                            <p class="email">syamasankaran@gmail.com</p>
+                            <div class="phone">8606586705</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/megha mv.jpg" alt="Megha M V"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Megha M V</h2>
+                            <p class="title">Guest Instructor</p>
+                            <p class="email"></p> 
+                            <div class="phone">9744448823</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-img-container">
+                            <div class="card-img"><img src="staff_pics/staff photo/SANDRA P.jpg" alt="Sandra P"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2>Sandra P</h2>
+                            <p class="title">Prov. Instructor</p>
+                            <p class="email"></p>
+                            <div class="phone">9544156047</div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+        </div>
+
+        <div class="footer">
+            <p>Government Institution &copy; 2023. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>

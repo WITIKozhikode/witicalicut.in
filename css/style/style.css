@@ -1,108 +1,31 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    background-color: dimgray;
-}
+ *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body{
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6572 100%);
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-/*=======================
- adding style to about-1 
-=======================*/
 
-.about-1{
-    margin: 30px;
-    padding: 5px;
-}
-.about-1 h1{
-    text-align: center;
-    color: black;
-    font-weight: bold;
-}
-.about-1 p{
-    text-align: center;
-    padding: 3px;
+
+
+.menu_button{
+    display: none;
+    font-size: 30px;
     color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
 }
 
-/*===========================
- adding style to about items 
-============================*/
-
-.about-item{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background-color: white;
-    padding: 80px 30px;
-    box-shadow: 0 0 9px rgba(0,0,0.6);
-}
-
-/*======================================
-adding style to the icons(book,globe,pencil)
-=========================================*/
-.about-item i{
-    font-size: 43px;
-    margin: 0;
-}
-
-/*======================================
-adding style to h3(heading 3) of each item 
-=========================================*/
-.about-item h3{
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-
-/*======================================
-styling the hr (the blue line in between)
-=========================================*/
-.about-item hr{
-    width: 46px;
-    height: 3px;
-    background-color: #5fbff9;
-    margin: 0 auto;
-    border: none;
-    text-align: center;
-}
-
-/*========================================
-hover means when you put your cursor over it
-=========================================*/
-.about-item:hover{
-    background-color: #5fbff9;
-}
-.about-item:hover i,
-.about-item:hover h3,
-.about-item:hover p{
-    color: #fff;
-}
-.about-item:hover hr{
-    background-color: #fff;
-}
-
-/*==============================================================================
-translate Y: move along the Y axis, negative(-20) moves it up, while positive(20) moves in down by  
-================================================================================*/
-.about-item:hover i{
-    transform: translateY(-20px);
-}
-.about-item:hover i,
-.about-item:hover h3,
-.about-item:hover hr{
-    transition: all 400ms ease-in-out;
-}
-
-footer{
-    background: #212226;
-    padding: 20px;
-}
-footer p{
-    color: #fff;
-}
-
-/*================================================================================
-if you manage it to this far, congratulations, check more on https://devhubke.com
-=================================================================================*/
 
 
 
@@ -119,3 +42,219 @@ if you manage it to this far, congratulations, check more on https://devhubke.co
 
 
 
+
+
+
+
+
+
+        /*=======================
+         adding style to about-1 
+        =======================*/
+
+        .about-1{
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 1200px;
+        }
+        
+        .about-1 h1{
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-1 h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #5fbff9, transparent);
+            border-radius: 2px;
+        }
+        
+        .about-1 p{
+            text-align: center;
+            padding: 20px 10px;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /*===========================
+         adding style to about items 
+        ============================*/
+
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .about-item{
+            background: linear-gradient(145deg, #ffffff 0%, #f5f7fa 100%);
+            padding: 60px 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .about-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #5fbff9, #0d324b, #5fbff9);
+        }
+
+        /*======================================
+        adding style to the icons(book,globe,pencil)
+        =========================================*/
+        .about-item i{
+            font-size: 60px;
+            margin-bottom: 25px;
+            color: #020d14;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        /*======================================
+        adding style to h3(heading 3) of each item 
+        =========================================*/
+        .about-item h3{
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+
+        .about-item p{
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            transition: all 0.4s ease;
+        }
+
+        /*======================================
+        styling the hr (the blue line in between)
+        =========================================*/
+        .about-item hr{
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #5fbff9, #3498db);
+            margin: 20px auto;
+            border: none;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        /*========================================
+        hover means when you put your cursor over it
+        =========================================*/
+        .about-item:hover{
+            background: linear-gradient(145deg, #3498db 0%, #5fbff9 100%);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+        
+        .about-item:hover i,
+        .about-item:hover h3,
+        .about-item:hover p{
+            color: #fff;
+        }
+        
+        .about-item:hover hr{
+            background: #fff;
+            width: 100px;
+        }
+
+        /*==============================================================================
+        translate Y: move along the Y axis, negative(-20) moves it up, while positive(20) moves in down by  
+        ================================================================================*/
+        .about-item:hover i{
+            transform: translateY(-15px) scale(1.1);
+        }
+
+        footer{
+            background: #1a1a1a;
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        footer p{
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        /* Additional enhancements */
+        .section-subtitle {
+            text-align: center;
+            color: #bdc3c7;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Animation for items on load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .about-item:nth-child(1) { animation-delay: 0.1s; }
+        .about-item:nth-child(2) { animation-delay: 0.2s; }
+        .about-item:nth-child(3) { animation-delay: 0.3s; }
+        .about-item:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-1 h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-1 p {
+                font-size: 1rem;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+        }
