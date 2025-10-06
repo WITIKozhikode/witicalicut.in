@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Connect - Govt ITI for Women Kozhikode</title>
+    <title>Contact - Govt ITI for Women Kozhikode</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* General Reset and Base Styles */
-        body {
+       body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000000;
     background-color: #9292e733;
@@ -229,7 +229,7 @@ h1, h2, h3, h4 {
         }
         
         .page-header h2 {
-            color: #3498db;
+            color: #1f3a61;
             font-size: 1.3rem;
             font-weight: 400;
         }
@@ -306,7 +306,7 @@ h1, h2, h3, h4 {
 
         .event-highlight {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #1f3a61;
             padding: 25px;
             margin: 25px 0;
             border-radius: 8px;
@@ -321,7 +321,7 @@ h1, h2, h3, h4 {
         }
 
         .event-highlight h3 i {
-            color: #3498db;
+            color: #1a2a41;
         }
 
         .event-stats {
@@ -352,7 +352,166 @@ h1, h2, h3, h4 {
             font-size: 0.9rem;
             margin-top: 5px;
         }
+/* --- New Contact Page Layout & Styling --- */
 
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #1f3a61;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: #000000; /* Orange accent */
+    margin-bottom: 15px;
+}
+
+.info-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    margin: 5px 0;
+}
+
+.info-card .small-text {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.social-links-card {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links-card a {
+    font-size: 1.5rem;
+    color: #1f3a61;
+}
+
+/* Contact Form and Map Grid */
+.contact-map-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for form and map */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-form-container, .map-container {
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2, .map-container h2 {
+    color: #3498db;
+    font-size: 1.8rem;
+    border-left: 5px solid #130930;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-form p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1f3a61;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    background-color: #0f0d0a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #181f5e;
+    transform: translateY(-2px);
+}
+
+.google-map {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.google-map iframe {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments for Contact Page */
+@media (max-width: 992px) {
+    .contact-map-form-grid {
+        grid-template-columns: 1fr; /* Stacks form and map on smaller screens */
+    }
+    .map-container {
+        order: 1; /* Puts the map first on mobile for better flow */
+    }
+    .contact-form-container {
+        order: 2;
+    }
+}
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr; /* Single column on small devices */
+    }
+}
         .whatsapp-cta {
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
@@ -671,162 +830,7 @@ h1, h2, h3, h4 {
         .footer-contact i:first-child {
             margin-left: 0;
         }
-/* --- Alumni Committee Section Styling --- */
-.committee-section {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #f7f9fc; /* Light background for contrast */
-    border-top: 1px solid #eee;
-    margin-top: 40px;
-}
 
-.committee-section h2 {
-    color: #1f3a61;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.committee-section h2::after {
-    content: '';
-    width: 100px;
-    height: 4px;
-    background-color: #3498db;
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-.section-description {
-    font-size: 1.1rem;
-    color: #555;
-    max-width: 800px;
-    margin: 30px auto 50px auto;
-    line-height: 1.8;
-}
-
-.committee-category {
-    margin-bottom: 60px;
-    text-align: left; /* Align category titles left */
-}
-
-.committee-category h3 {
-    color: #004872; /* Darker blue for subheadings */
-    font-size: 2rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #007bff; /* Underline for emphasis */
-    padding-bottom: 8px;
-    display: inline-block; /* Makes underline only as wide as text */
-    margin-left: 20px; /* Indent slightly */
-}
-
-.category-description {
-    font-style: italic;
-    color: #777;
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-    max-width: 900px;
-    margin-left: 20px; /* Match indent */
-}
-
-
-.committee-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px;
-    padding: 20px;
-}
-
-.committee-member-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e0e0e0;
-}
-
-.committee-member-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.member-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Circular images */
-    object-fit: cover;
-    border: 4px solid #3498db; /* Accent border */
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.member-details {
-    text-align: center;
-}
-
-.member-details h4 {
-    font-size: 1.5rem;
-    color: #1f3a61;
-    margin-bottom: 5px;
-}
-
-.member-post {
-    font-size: 1rem;
-    color: #007bff; /* Blue for role */
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.member-contact a {
-    color: #555;
-    font-size: 0.9rem;
-    word-break: break-all; /* Prevents long emails from breaking layout */
-}
-
-.member-contact a:hover {
-    color: #007bff;
-    text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .committee-section h2 {
-        font-size: 2rem;
-    }
-    .committee-category h3 {
-        font-size: 1.6rem;
-        margin-left: 0;
-    }
-    .category-description {
-        margin-left: 0;
-    }
-    .committee-grid {
-        padding: 10px;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .committee-member-card {
-        padding: 20px;
-    }
-    .member-photo {
-        width: 100px;
-        height: 100px;
-    }
-    .member-details h4 {
-        font-size: 1.3rem;
-    }
-    .member-post {
-        font-size: 0.9rem;
-    }
-}
 
         #backtotop {
             position: fixed;
@@ -885,7 +889,7 @@ h1, h2, h3, h4 {
 </head>
 
 <body>
-   <div class="main-header">
+    <div class="main-header">
 <div class="main-header">
     <div class="container">
         <div class="logo-section">
@@ -936,233 +940,93 @@ h1, h2, h3, h4 {
         </nav>
         </header>
     <div id="wrapper">
-        <main>
-            <section class="alumni-hero">
-                <div class="container">
-                    <h1>The Official Alumni Network</h1>
-                    <p>Foundation you built here is the legacy we celebrate.</p>
-                </div>
-            </section>
-
-            <section class="alumni-content">
-                <div class="container">
-                    <div class="alumni-intro">
-                        <h2>Alumni Reunion 2025</h2>
-                        <p>കളിച്ചും ചിരിച്ചും പഠിച്ചും, സൗഹൃദം പങ്കുവെച്ചും ആഘോഷത്തോടെ ജീവിച്ച ആ പഴയ കലാലയത്തിൽ നമ്മുടെ സഹപാഠികളുമൊത്ത് ഒരു ദിനം, കോഴിക്കോട് ഗവ. വനിത ഐ ടി ഐ alumni അസോസിയേഷൻ-ന്റെ നേതൃത്വത്തിൽ 2025 സെപ്റ്റംബർ 13, ന് alumni meet നടത്തുകയുണ്ടായി.</p>
-                        
-                        <div class="event-highlight">
-                            <h3><i class="fas fa-calendar-check"></i> Event Highlights</h3>
-                            <p>ജീവിതത്തിലെ ഒരിക്കലും മറക്കാത്ത മുഖങ്ങളും അനുഭവങ്ങളും പങ്ക് വെച്ച ആ കലാലയ മുറ്റത്തേക്ക് എത്തിച്ചേർന്നത് 124 പൂർവവിദ്യാർത്ഥികൾ ആണ്. പുതിയതും, പഴയതും ആയ അനുഭവങ്ങൾ അവർ പങ്കുവെച്ചു. ജീവിത വിജയം കൈവരിച്ച പലരും അവരുടെ അനുഭവങ്ങൾ വേദിയിൽ പങ്കിടുകയുണ്ടായി.</p>
-                            <p>ഇത് meetil എത്തിച്ചേർന്ന പലർക്കും അവരുടെ മുൻപോട്ടുള്ള ജീവിതത്തിനു പ്രചോദനം നൽകുന്ന തരത്തിലുള്ളതായിരുന്നു.</p>
-                        </div>
-
-                        <div class="event-stats">
-                            <div class="stat-card">
-                                <span class="stat-number">124</span>
-                                <span class="stat-label">Alumni Attended</span>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-number">13</span>
-                                <span class="stat-label">Committee Members</span>
-                            </div>
-                            <div class="stat-card">
-                                <span class="stat-number">2025</span>
-                                <span class="stat-label">Year of Last Reunion</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <section class="whatsapp-cta">
-                        <div class="container">
-                            <h2>Join Our Exclusive Alumni Network!</h2>
-                            <p>If you are an alumna of Women's ITI Kozhikode, connect with former classmates, share opportunities, and stay updated on events.</p>
-                            <a href="https://chat.whatsapp.com/Fh2fs78knJKB5ZY4m5HEfb" class="whatsapp-btn" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Join Alumni WhatsApp Group
-                            </a>
-                        </div>
-                    </section>
-<section class="committee-section container">
-    <h2>Meet Our Alumni Association Committee</h2>
-    <p class="section-description">
-        Our dedicated Alumni Association Committee works tirelessly to foster a strong network,
-        organize engaging events, and provide invaluable support for our alumnae.
-        Get to know the passionate individuals who are making a difference!
-    </p>
-
-    <div class="committee-category">
-        <h3>Executive Committee</h3>
-        <p class="category-description">
-            The core leadership team guiding the vision and operations of the Alumni Association.
-        </p>
-        <div class="committee-grid">
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/Sangeeth1.jpg" alt="Sangeeth" class="member-photo">
-                <div class="member-details">
-                    <h4>Sangeeth Kumar B</h4>
-                    <p class="member-post">Group Instructor</p>
-                </div>
-            </div>
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/Prajitha V P.jpg" alt="Prajitha" class="member-photo">
-                <div class="member-details">
-                    <h4>Prajitha V.P.</h4>
-                    <p class="member-post">Senior Instructor</p>
-                </div>
-            </div>
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/Risna.JPG" alt="Rizna" class="member-photo">
-                <div class="member-details">
-                    <h4>Risna P.V.</h4>
-                    <p class="member-post">Senior Instructor</p>
-                </div>
-            </div>
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/Resmi.jpg" alt="Reshmi" class="member-photo">
-                <div class="member-details">
-                    <h4>Reshmi P.M.</h4>
-                    <p class="member-post">Senior Instructor</p>
-                </div>
-            </div>
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/sumesh.jpg" alt="Sumesh" class="member-photo">
-                <div class="member-details">
-                    <h4>Sumesh T.</h4>
-                    <p class="member-post">Senior Instructor</p>
-                </div>
-            </div>
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/pramodan.jpg" alt="Pramodan" class="member-photo">
-                <div class="member-details">
-                    <h4>Pramodan M.</h4>
-                    <p class="member-post">UD Store Keeper</p>
-                </div>
+    <main class="contact-page-main">
+        <div class="alumni-hero" style="padding: 60px 0; margin-bottom: 0; background: linear-gradient(rgba(5, 22, 34, 0.8), rgba(4, 71, 116, 0.8)), url('images/contact-hero.jpg'); background-size: cover;">
+            <div class="container">
+                <h1>Get in Touch With Us</h1>
+                <p>We're here to help! Whether you have questions about admissions, placements, or just want to connect, find all the ways to reach the Govt. ITI for Women, Kozhikode.</p>
             </div>
         </div>
-    </div>
 
-    <div class="committee-category">
-        <h3>Mentorship Program Team</h3>
-        <p class="category-description">
-            Dedicated to guiding current students and recent graduates, our mentorship team connects
-            experience with aspiration.
-        </p>
-        <div class="committee-grid">
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/Ratna Pradeepan.jpg" alt="Ratna" class="member-photo">
-                <div class="member-details">
-                    <h4>Ratna Pradeepan</h4>
-                    <p class="member-post">Group Instructor</p>
+        <div class="container alumni-content">
+            
+            <section class="contact-info-grid">
+                
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h2>ADDRESS</h2>
+                    <p>Govt. ITI (W) Kozhikode,</p>
+                    <p>Malikkadavu, Calicut - 673010, Kerala.</p>
                 </div>
-            </div>
-            </div>
-    </div>
 
-    <div class="committee-category">
-        <h3>Event Planning Team</h3>
-        <p class="category-description">
-            The creative force behind our vibrant alumni gatherings, reunions, and professional development events.
-        </p>
-        <div class="committee-grid">
-            <div class="committee-member-card">
-                <img src="staff_pics/staff photo/PRABIJA M.jpeg" alt="Prabija" class="member-photo">
-                <div class="member-details">
-                    <h4>Prabija M.</h4>
-                    <p class="member-post">Junior Instructor</p>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h2>PHONE NUMBERS</h2>
+                    <p><strong>Whatsapp:</strong> 9495353976</p>
+                    <p><strong>Office:</strong> 0495 2373976</p>
+                    <p class="small-text">Call during standard working hours.</p>
                 </div>
-            </div>
 
-    </div>
-</section>
-
-                    <section class="alumni-gallery">
-                        <h2>Memorable Moments</h2>
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="alumni_photos/1.jpeg" alt="Alumni Gathering" />
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/2.jpeg" alt="Alumni Sharing Experiences" />
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/3.jpeg" alt="Group Photo" />
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/4.jpeg" alt="Alumni Interactions" />
-
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/5.jpeg" alt="Alumni Event" />
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/6.jpeg" alt="Alumni Meet" />
-                            </div>
-                            <div class="gallery-item">
-                                <img src="alumni_photos/7.jpeg" alt="Alumni Celebration" />
-                            
-                        </div>
-                        <div class="gallery-item">
-                                <img src="alumni_photos/8.jpeg" alt="Alumni Reunion" />
-                            </div>
-                        </div>
-                        <div style="text-align: center; margin-top: 20px;">
-                            <a href="alumni_photos" class="view-more-btn" style="background-color: #3498db; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">View More Photos</a>
-
-                    </section>
-
-                    
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h2>EMAIL ADDRESS</h2>
+                    <p><strong>Official:</strong> <a href="mailto:itiwcalicut@gmail.com">itiwcalicut@gmail.com</a></p>
+                    <p><strong>Other:</strong> <a href="mailto:training@itiwcalicut.in">training@itiwcalicut.in</a></p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h2>SOCIAL MEDIA</h2>
+                    <p>Follow us for real-time updates and news.</p>
+                    <div class="social-links-card">
+                        <a href="https://www.facebook.com/groups/269521203187630/?ref=share&mibextid=KtfwRi" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/witiss_ko?utm_source=ig_web_button_share_sheet&igsh=ZWJxdWszMm9kcWcx" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCdOMxjsN59Cc6-WbxNnJMvw" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </section>
-        </main>
-    </div>
+            
+            <div class="contact-map-form-grid">
+                
+                <section class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a specific query? Fill out the form below and we'll get back to you as soon as possible.</p>
+<form action="mailto:itiwcalicut@gmail.com?subject=Website Query from User" method="POST" class="contact-form" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Subject of your query">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Write your detailed message here..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </section>
+                
+                <section class="map-container">
+                    <h2>HOW TO REACH US</h2>
+                    <p>Locate us easily on the map. We're situated near Malikkadavu, Kozhikode.</p>
+                    <div class="google-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3615962071064!2d75.8340669736868!3d11.272101350618037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6592233f20d2d%3A0x62804f32c1c38a2e!2sGovt%20ITI%20for%20Women!5e0!3m2!1sen!2sin!4v1699092490890!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </section>
+                
+            </div>
+            
+        </div>
+    </main>
+</div>
 
 
-            <!-- <section class="alumni-stories">
-                <div class="container">
-                    <h2>Our Success Stories</h2>
-                    <div class="story-card-grid">
-                        <div class="story-card">
-                            <h3>A Career Built on Precision</h3>
-                            <p>"The Electrician trade course gave me the confidence and skills to start my own contracting business. ITI changed my life!"</p>
-                            <div class="alumni-info">— Anjali R. (Electrician Trade, Batch 2015)</div>
-                        </div>
-                        <div class="story-card">
-                            <h3>From Classroom to Corporate</h3>
-                            <p>"The Fitter trade course prepared me perfectly for my current role at a major manufacturing firm. The hands-on training was invaluable."</p>
-                            <div class="alumni-info">— Fathima K. (Fitter Trade, Batch 2018)</div>
-                        </div>
-                        <div class="story-card">
-                            <h3>Inspiring the Next Generation</h3>
-                            <p>"I'm now a Junior Instructor, teaching at a nearby ITI. Giving back what I learned here is the most rewarding part of my journey."</p>
-                            <div class="alumni-info">— Geetha M. (Draftsman Civil Trade, Batch 2012)</div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- <section class="alumni-gallery">
-                <div class="container">
-                    <h2>Memories & Milestones</h2>
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-1.jpg" alt="Alumni Event Group Photo">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-2.jpg" alt="Alumna at Work">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-3.jpg" alt="Graduation Day Throwback">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-4.jpg" alt="Alumni Workshop">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-5.jpg" alt="Networking Event">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/alumni-pic-6.jpg" alt="Old Classroom Photo">
-                        </div>
-                    </div>
-                </div>
-            </section> -->
         </main>
 
         
