@@ -523,6 +523,7 @@ h1, h2, h3, h4 {
 }
 
        
+       
         #footer {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #ecf0f1;
@@ -633,8 +634,6 @@ h1, h2, h3, h4 {
         .footer-contact i:first-child {
             margin-left: 0;
         }
-
-
         #backtotop {
             position: fixed;
             bottom: 30px;
@@ -1318,6 +1317,7 @@ h1, h2, h3, h4 {
 
     </main>
       <!-- Footer -->
+       <!-- Footer -->
         <footer id="footer">
         <div class="footer-top-section container">
             <div class="footer-col">
@@ -1377,5 +1377,28 @@ h1, h2, h3, h4 {
     <div id="backtotop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
         <i class="fas fa-arrow-up"></i>
     </div>
+
+    <script>
+
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            document.getElementById('main-menu').classList.toggle('active');
+        });
+
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const staffCards = document.querySelectorAll('.staff-card');
+            
+            staffCards.forEach(card => {
+                const name = card.querySelector('h2').textContent.toLowerCase();
+                const title = card.querySelector('.title').textContent.toLowerCase();
+                
+                if (name.includes(searchTerm) || title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
