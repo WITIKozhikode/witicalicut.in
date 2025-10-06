@@ -506,7 +506,6 @@ html {
     <title>Staff Directory - Govt ITI for Women Kozhikode</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== RESET & GLOBAL STYLES ===== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -549,7 +548,6 @@ html {
             padding: 0 20px;
         }
         
-        /* ===== HEADER & NAVIGATION ===== */
         .top-bar {
             background-color: #1f3a61;
             color: white;
@@ -706,7 +704,6 @@ html {
             display: none;
         }
         
-        /* ===== PAGE HEADER ===== */
         .page-header {
             text-align: center;
             margin: 30px 0;
@@ -744,7 +741,6 @@ html {
             background-color: #2980b9;
         }
         
-        /* ===== STAFF GRID ===== */
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -893,7 +889,7 @@ html {
 
 a {
     text-decoration: none;
-    color: #007bff; /* Primary blue for links */
+    color: #007bff;
     transition: color 0.3s;
 }
 
@@ -907,7 +903,7 @@ ul {
 }
 
 h1, h2, h3, h4 {
-    color: #1f3a61; /* Dark Navy Blue for headings */
+    color: #1f3a61;
     margin-bottom: 15px;
     font-weight: 900;
 }
@@ -918,9 +914,8 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* --- TOP BAR --- */
 .top-bar {
-    background-color: #1f3a61; /* Navy Blue */
+    background-color: #1f3a61;
     color: white;
     padding: 8px 0;
     font-size: 0.85rem;
@@ -951,7 +946,7 @@ h1, h2, h3, h4 {
     font-size: 1.1rem;
 }
 
-/* --- MAIN HEADER --- */
+
 .main-header {
     padding: 20px 0;
     background-color: white;
@@ -999,7 +994,7 @@ h1, h2, h3, h4 {
 }
 
 .apply-btn a {
-    background-color: #004872; /* Orange CTA button */
+    background-color: #004872; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -1014,9 +1009,9 @@ h1, h2, h3, h4 {
     background-color: #0b223d;
 }
 
-/* --- MAIN NAVIGATION --- */
+
 #main-nav {
-    background-color: #34495e; /* Darker grey/blue */
+    background-color: #34495e;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -1074,10 +1069,10 @@ h1, h2, h3, h4 {
 }
 
 #mobile-menu-toggle {
-    display: none; /* Hide by default */
+    display: none; 
 }
 
-/* --- BANNER --- */
+
 .banner-part {
     position: relative;
     padding: 20px 0;
@@ -1125,14 +1120,14 @@ h1, h2, h3, h4 {
     text-shadow: 1px 1px 3px rgba(22, 19, 19, 0.5);
 }
 
-/* --- NEWS TICKER --- */
+
 #news-ticker {
     background-color: #ffffff;
     border: 2px solid #a50000;
     padding: 10px 19px;
     margin-top: 20px;
     border-radius: 10px;
-    overflow: hidden; /* Add this to contain the scrolling */
+    overflow: hidden; 
 }
 
 .ticker-content {
@@ -1149,7 +1144,8 @@ h1, h2, h3, h4 {
     border-radius: 3px;
     margin-right: 15px;
     flex-shrink: 0;
-    z-index: 2; /* Keep label above scrolling content */
+    z-index: 2; 
+    
 }
 
 .ticker-text {
@@ -1159,13 +1155,12 @@ h1, h2, h3, h4 {
     flex-grow: 1;
 }
 
-/* Animate the entire ticker-text container instead of just the link */
 .ticker-text a {
     color: #dc3545;
     font-weight: bold;
     text-decoration: underline;
     display: inline-block;
-    padding-left: 100%; /* Start offscreen */
+    padding-left: 100%; 
     animation: ticker 15s linear infinite;
 }
 
@@ -1182,7 +1177,6 @@ h1, h2, h3, h4 {
     animation-play-state: paused;
 }
 
-/* --- MAIN CONTENT GRIDS --- */
 #content {
     padding-top: 30px;
     padding-bottom: 50px;
@@ -1246,7 +1240,6 @@ h1, h2, h3, h4 {
     margin-bottom: 15px;
 }
 
-/* --- CARD SECTIONS (NEWS, CALENDAR, VIDEO) --- */
 .card-section {
     background: white;
     padding: 20px;
@@ -1256,10 +1249,9 @@ h1, h2, h3, h4 {
 
 .card-section h3 {
     font-size: 1.3rem;
-    border-bottom: 2px solid #ff9800; /* Orange accent */
+    border-bottom: 2px solid #ff9800;
 }
 
-/* News List */
 .news-item {
     border-bottom: 1px solid #eee;
     padding: 10px 0;
@@ -1281,7 +1273,6 @@ h1, h2, h3, h4 {
     margin: 5px 0;
 }
 
-/* Calendar */
 .calendar-item {
     display: flex;
     align-items: flex-start;
@@ -1319,7 +1310,6 @@ h1, h2, h3, h4 {
     font-size: 1rem;
 }
 
-/* Video */
 .video-player {
     margin-bottom: 15px;
     background-color: black;
@@ -1341,7 +1331,7 @@ h1, h2, h3, h4 {
     background-color: #ddd;
 }
 
-/* --- GALLERY --- */
+
 #gallery-section h2 {
     border-bottom: 2px solid #1f3a61;
     display: inline-block;
@@ -1368,30 +1358,26 @@ h1, h2, h3, h4 {
     display: block;
     transition: transform 0.3s;
 }
-/* Ensure the slideshow container is positioned relative */
 .slideshow-container {
-    position: relative; /* This is crucial for absolute positioning the caption */
-    /* Other styles for your container... */
+    position: relative; 
 }
 
-/* Style for the dynamic caption */
 .slide-caption {
     position: absolute;
-    bottom: 0; /* Position at the bottom of the container */
+    bottom: 0; 
     left: 0;
     right: 0;
-    padding: 10px 15px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 10px 15px; 
     color: #fff;
     font-size: 1em;
     text-align: center;
-    z-index: 10; /* Make sure it's above the image */
+    z-index: 10;
 }
 .gallery-grid img:hover {
     transform: scale(1.05);
 }
 
-        /* Footer Styles */
+
         #footer {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #ecf0f1;
@@ -1469,7 +1455,7 @@ h1, h2, h3, h4 {
             display: block;
         }
 
-        /* Footer Bottom Section */
+
         .footer-bottom-section {
             background: rgba(0, 0, 0, 0.3);
             padding: 25px 0;
@@ -1503,7 +1489,7 @@ h1, h2, h3, h4 {
             margin-left: 0;
         }
 
-        /* Back to Top Button */
+
         #backtotop {
             position: fixed;
             bottom: 30px;
@@ -1528,7 +1514,7 @@ h1, h2, h3, h4 {
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
         }
 
-        /* Responsive Design */
+
         @media (max-width: 992px) {
             .footer-top-section {
                 grid-template-columns: repeat(2, 1fr);
@@ -1557,7 +1543,7 @@ h1, h2, h3, h4 {
                 height: 45px;
             }
         }
-      /* Slideshow Container */
+
         .slideshow-container {
             position: relative;
             margin-bottom: 20px;
@@ -1584,7 +1570,7 @@ h1, h2, h3, h4 {
             opacity: 1;
         }
 
-        /* Navigation Arrows */
+
         .slideshow-nav {
             position: absolute;
             top: 50%;
@@ -1619,7 +1605,7 @@ h1, h2, h3, h4 {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Slide Indicators */
+
         .slide-indicators {
             display: flex;
             justify-content: center;
@@ -1645,7 +1631,7 @@ h1, h2, h3, h4 {
             background-color: #9b59b6;
         }
 
-        /* Content */
+
         .left-column p {
             color: #555;
             margin: 20px 0;
@@ -1673,7 +1659,7 @@ h1, h2, h3, h4 {
             color:#fafafa
         }
 
-        /* Auto-play indicator */
+
         .auto-play-status {
             text-align: center;
             margin-top: 10px;
@@ -1681,7 +1667,7 @@ h1, h2, h3, h4 {
             color: #7f8c8d;
         }
 
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .slideshow-container {
                 height: 300px;
@@ -1710,7 +1696,7 @@ h1, h2, h3, h4 {
                 padding: 15px;
             }
         }
-/* --- BACK TO TOP BUTTON --- */
+
 #backtotop {
     position: fixed;
     bottom: 20px;
@@ -1733,7 +1719,7 @@ h1, h2, h3, h4 {
     background-color: #0056b3;
 }
 
-/* --- RESPONSIVENESS (MOBILE) --- */
+
 @media (max-width: 992px) {
     .content-grid-2 {
         grid-template-columns: 1fr;
@@ -1775,7 +1761,7 @@ h1, h2, h3, h4 {
         gap: 10px;
     }
 
-    /* Mobile Menu */
+
     #main-menu {
         display: none;
         flex-direction: column;
@@ -1804,7 +1790,7 @@ h1, h2, h3, h4 {
         border-top: none;
     }
 }
-/* ===== LOGO & INSTITUTE NAME SECTION ===== */
+
 .logo-section {
     display: flex;
     align-items: center;
@@ -1827,7 +1813,7 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .logo-section {
         flex-direction: column;
@@ -1852,7 +1838,7 @@ h1, h2, h3, h4 {
     }
   }
         
-        /* ===== RESPONSIVE STYLES ===== */
+
         @media (max-width: 1200px) {
             .staff-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -1886,7 +1872,7 @@ h1, h2, h3, h4 {
                 gap: 10px;
             }
             
-            /* Mobile Menu */
+
             #main-menu {
                 display: none;
                 flex-direction: column;
@@ -2001,7 +1987,6 @@ h1, h2, h3, h4 {
         </nav>
         </header>
 
-        <!-- Main Content -->
         <main id="content">
             <div class="container">
                 <div class="page-header">
@@ -2010,8 +1995,6 @@ h1, h2, h3, h4 {
                 </div>
                 
                 <div class="staff-grid">
-                    <!-- Staff cards will be generated here -->
-                    <!-- Each staff card follows the same structure -->
                     <div class="staff-card">
                         <div class="card-img-container">
                             <div class="card-img"><img src="staff_pics/staff photo/Shaju K P.jpg" alt="Shaju K P"></div>
@@ -2617,12 +2600,11 @@ h1, h2, h3, h4 {
     </div>
 
     <script>
-        // Mobile menu toggle functionality
+
         document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
             document.getElementById('main-menu').classList.toggle('active');
         });
 
-        // Search functionality
         document.querySelector('.search-box button').addEventListener('click', function() {
             const searchTerm = document.getElementById('search-input').value.toLowerCase();
             const staffCards = document.querySelectorAll('.staff-card');
