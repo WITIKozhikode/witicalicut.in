@@ -1252,57 +1252,7 @@ h1, h2, h3, h4 {
     position: relative; 
 }
 
-#main-menu {
-    display: flex;
-    margin: 0;
-}
 
-#main-menu > li > a {
-    color: white;
-    padding: 15px 18px;
-    display: block;
-    font-weight: 500;
-    position: relative;
-}
-
-#main-menu > li > a:hover {
-    background-color: #4a6681;
-}
-
-.has-submenu {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    min-width: 200px;
-    border-top: 3px solid #007bff;
-}
-
-.has-submenu:hover .submenu {
-    display: block;
-}
-
-.submenu li a {
-    color: #333;
-    padding: 10px 15px;
-    display: block;
-}
-
-.submenu li a:hover {
-    background-color: #f0f0f0;
-    color: #007bff;
-}
-
-#mobile-menu-toggle {
-    display: none;
-}
 .slide-caption {
     position: absolute;
     bottom: 0; 
@@ -1679,7 +1629,57 @@ h1, h2, h3, h4 {
         margin: 0 auto 15px;
     }
 }
+#main-menu {
+    display: flex;
+    margin: 0;
+}
 
+#main-menu > li > a {
+    color: white;
+    padding: 15px 18px;
+    display: block;
+    font-weight: 500;
+    position: relative;
+}
+
+#main-menu > li > a:hover {
+    background-color: #4a6681;
+}
+
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 200px;
+    border-top: 3px solid #007bff;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li a {
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+#mobile-menu-toggle {
+    display: none;
+}
 @media (max-width: 768px) {
     .main-header .container {
         flex-direction: column;
@@ -1699,6 +1699,19 @@ h1, h2, h3, h4 {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+        #main-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #34495e;
+
+        /* --- CRITICAL ADDITIONS FOR MOBILE MENU POSITIONING --- */
+        position: absolute; /* Needed to make it drop down from the header */
+        top: 100%; /* Positions it right below the parent container */
+        left: 0; /* Aligns it to the left edge of the screen/container */
+        z-index: 999; /* Ensures it sits above other page content */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added for visual separation */
     }
 #main-menu {
         display: none;
