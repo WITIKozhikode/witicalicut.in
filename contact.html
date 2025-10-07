@@ -1851,6 +1851,35 @@ h1, h2, h3, h4 {
             }
         }
     </style>
+        <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the toggle button and the main menu elements
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('main-menu');
+        
+        // Ensure both elements exist before adding the listener
+        if (toggle && menu) {
+            toggle.addEventListener('click', function() {
+                // 1. Toggle the 'active' class on the menu (this is what shows/hides it via CSS)
+                menu.classList.toggle('active');
+                
+                // 2. Accessibility: Update the aria-expanded attribute
+                // This lets screen readers know the state of the menu
+                let isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+                toggle.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+        
+        // Optional: Close the menu when a link inside it is clicked (for better mobile UX)
+        const menuLinks = menu ? menu.querySelectorAll('a') : [];
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    });
+</script>
 </head>
 
 <body>
